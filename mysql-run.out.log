@@ -1,0 +1,41 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-05-08T00:10:41.575+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] c.e.h.HospitalMonitoringApplication      : Starting HospitalMonitoringApplication v0.0.1-SNAPSHOT using Java 17.0.12 with PID 1100 (D:\Projet react\dashboard_hopital\backend\target\hospital-fridge-backend-0.0.1-SNAPSHOT.jar started by oussama in D:\Projet react\dashboard_hopital\backend)
+2026-05-08T00:10:41.581+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] c.e.h.HospitalMonitoringApplication      : The following 1 profile is active: "mysql"
+2026-05-08T00:10:43.234+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-08T00:10:43.402+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 4 JPA repository interfaces.
+2026-05-08T00:10:44.704+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-08T00:10:44.729+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-08T00:10:44.731+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-05-08T00:10:44.797+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-08T00:10:44.800+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3122 ms
+2026-05-08T00:10:45.122+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-08T00:10:45.292+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-05-08T00:10:45.390+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-08T00:10:46.106+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-08T00:10:46.179+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-08T00:10:46.579+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@701d2b59
+2026-05-08T00:10:46.584+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-08T00:10:46.716+01:00  WARN 1100 --- [hospital-fridge-backend] [           main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-08T00:10:46.730+01:00  WARN 1100 --- [hospital-fridge-backend] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-08T00:10:48.067+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-08T00:10:48.204+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-08T00:10:50.996+01:00  INFO 1100 --- [hospital-fridge-backend] [d-1778195449505] c.emsi.hospital.service.MqttSubscriber   : MQTT subscription active on hospital/fridges/+/telemetry
+2026-05-08T00:10:51.089+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] c.emsi.hospital.service.MqttSubscriber   : MQTT connected to ssl://1f72ed63caf84bcb8452911f2e045246.s1.eu.hivemq.cloud:8883 and subscribed to hospital/fridges/+/telemetry
+2026-05-08T00:10:52.222+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-08T00:10:52.299+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2026-05-08T00:10:52.301+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@37f0fb02]]
+2026-05-08T00:10:52.302+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2026-05-08T00:10:52.342+01:00  INFO 1100 --- [hospital-fridge-backend] [           main] c.e.h.HospitalMonitoringApplication      : Started HospitalMonitoringApplication in 11.691 seconds (process running for 12.464)
+2026-05-08T00:11:12.898+01:00  INFO 1100 --- [hospital-fridge-backend] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-08T00:11:12.901+01:00  INFO 1100 --- [hospital-fridge-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-08T00:11:12.902+01:00  INFO 1100 --- [hospital-fridge-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-08T00:11:52.162+01:00  INFO 1100 --- [hospital-fridge-backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
