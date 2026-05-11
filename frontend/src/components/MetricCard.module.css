@@ -1,0 +1,46 @@
+.card {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #dbe7ec;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #607d8b;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.card strong {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.card p {
+  margin: 0;
+  color: #607d8b;
+  font-size: 0.86rem;
+}
+
+.teal {
+  border-top: 4px solid #00897b;
+}
+
+.blue {
+  border-top: 4px solid #1976d2;
+}
+
+.amber {
+  border-top: 4px solid #f9a825;
+}
+
+.red {
+  border-top: 4px solid #c62828;
+}
