@@ -1,0 +1,412 @@
+.shell {
+  min-height: 100vh;
+  background: #f0f4f8;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Topbar ── */
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: #00695c;
+  color: #fff;
+  gap: 16px;
+}
+
+.topbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.topbarLeft strong {
+  font-size: 1rem;
+}
+
+.sep {
+  opacity: 0.5;
+}
+
+.topbarRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.88rem;
+}
+
+.backBtn,
+.logoutBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.backBtn:hover,
+.logoutBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  padding: 32px 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.error {
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  background: #fdecea;
+  border: 1px solid #f44336;
+  border-radius: 8px;
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+/* ── Section ── */
+.section {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e0e7ef;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e7ef;
+}
+
+.sectionHeader h2 {
+  margin: 0 0 2px;
+  font-size: 1.15rem;
+  color: #1a2a3a;
+}
+
+.sectionHeader p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #607d8b;
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 16px;
+  height: 38px;
+  background: #00695c;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s;
+}
+
+.addBtn:hover {
+  background: #00796b;
+}
+
+/* ── Create card ── */
+.createCard {
+  margin: 20px 24px;
+  border: 1.5px solid #b2dfdb;
+  border-radius: 12px;
+  padding: 20px;
+  background: #f9fffe;
+}
+
+.createCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.createCardHeader h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #1a2a3a;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #607d8b;
+  padding: 4px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #37474f;
+}
+
+.field input {
+  padding: 8px 11px;
+  border: 1px solid #cfd8dc;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.field input:focus {
+  border-color: #00695c;
+}
+
+/* ── Fridge section ── */
+.fridgeSection {
+  margin-top: 8px;
+}
+
+.fridgeSectionTitle {
+  margin: 0 0 10px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #37474f;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fridgeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.fridgeCheck {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  background: #fff;
+}
+
+.fridgeCheck:hover {
+  border-color: #80cbc4;
+  background: #f0fafa;
+}
+
+.fridgeCheck.checked {
+  border-color: #00695c;
+  background: #e8f5e9;
+}
+
+.fridgeCheck input[type="checkbox"] {
+  accent-color: #00695c;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.fridgeCheck div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fridgeCheck strong {
+  font-size: 0.85rem;
+  color: #1a2a3a;
+  line-height: 1.2;
+}
+
+.fridgeCheck small {
+  font-size: 0.77rem;
+  color: #607d8b;
+}
+
+.dot {
+  display: none;
+}
+
+/* ── Actions ── */
+.formActions,
+.editActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.cancelBtn {
+  padding: 0 16px;
+  height: 36px;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  background: #fff;
+  color: #546e7a;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.saveBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  height: 36px;
+  background: #00695c;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: #00796b;
+}
+
+.saveBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Tech list ── */
+.techList {
+  padding: 16px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.empty {
+  text-align: center;
+  padding: 32px 0;
+  color: #90a4ae;
+  font-size: 0.9rem;
+}
+
+.techCard {
+  border: 1px solid #e0e7ef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.techCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: #fafbfc;
+  border-bottom: 1px solid #f0f4f8;
+}
+
+.techInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.techInfo strong {
+  font-size: 0.95rem;
+  color: #1a2a3a;
+}
+
+.email {
+  font-size: 0.82rem;
+  color: #607d8b;
+}
+
+.roleBadge {
+  padding: 2px 9px;
+  background: #e0f2f1;
+  color: #00695c;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.editBtn {
+  padding: 0 14px;
+  height: 32px;
+  border: 1px solid #b0bec5;
+  border-radius: 7px;
+  background: #fff;
+  color: #37474f;
+  font-size: 0.83rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  white-space: nowrap;
+}
+
+.editBtn:hover {
+  border-color: #00695c;
+  color: #00695c;
+}
+
+/* ── Assigned chips ── */
+.assignedList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 12px 16px;
+}
+
+.fridgeChip {
+  padding: 4px 12px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.noFridges {
+  font-size: 0.85rem;
+  color: #90a4ae;
+  font-style: italic;
+}
+
+/* ── Edit block ── */
+.editBlock {
+  padding: 16px;
+  background: #fafffe;
+  border-top: 1px solid #e0f2f1;
+}
