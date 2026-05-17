@@ -28,6 +28,15 @@ public class AlertService {
         return alerts.stream().map(HospitalMapping::toAlertResponse).toList();
     }
 
+    @Transactional(readOnly = true)
+    public List<AlertResponse> getAlertsForDevices(Boolean resolved, List<String> deviceIds) {
+        if (deviceIds == null || deviceIds.isEmpty()) return List.of();
+        List<Alert> alerts = resolved == null
+                ? alertRepository.findByDeviceIdInOrderByCreatedAtDesc(deviceIds)
+                : alertRepository.findByDeviceIdInAndResolvedOrderByCreatedAtDesc(deviceIds, resolved);
+        return alerts.stream().map(HospitalMapping::toAlertResponse).toList();
+    }
+
     @Transactional
     public AlertResponse resolve(Long id) {
         Alert alert = alertRepository.findById(id).orElseThrow();

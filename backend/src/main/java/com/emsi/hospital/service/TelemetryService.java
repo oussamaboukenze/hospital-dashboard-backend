@@ -93,6 +93,13 @@ public class TelemetryService {
     }
 
     @Transactional(readOnly = true)
+    public List<RefrigeratorResponse> getRefrigeratorsForDeviceIds(List<String> deviceIds) {
+        return refrigeratorRepository.findByDeviceIdIn(deviceIds).stream()
+                .map(HospitalMapping::toRefrigeratorResponse)
+                .toList();
+    }
+
+    @Transactional(readOnly = true)
     public RefrigeratorResponse getRefrigerator(String deviceId) {
         return refrigeratorRepository.findByDeviceId(deviceId)
                 .map(HospitalMapping::toRefrigeratorResponse)

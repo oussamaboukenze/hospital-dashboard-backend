@@ -12,4 +12,8 @@ public interface AlertRepository extends JpaRepository<Alert, Long> {
     List<Alert> findAllByOrderByCreatedAtDesc();
 
     Optional<Alert> findTopByDeviceIdAndTypeAndResolvedFalseOrderByCreatedAtDesc(String deviceId, String type);
+
+    List<Alert> findByDeviceIdInOrderByCreatedAtDesc(List<String> deviceIds);
+
+    List<Alert> findByDeviceIdInAndResolvedOrderByCreatedAtDesc(List<String> deviceIds, boolean resolved);
 }

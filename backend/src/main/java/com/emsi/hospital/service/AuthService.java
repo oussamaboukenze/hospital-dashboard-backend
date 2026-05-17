@@ -5,25 +5,31 @@ import com.emsi.hospital.dto.LoginResponse;
 import com.emsi.hospital.dto.CreateUserRequest;
 import com.emsi.hospital.dto.UserResponse;
 import com.emsi.hospital.model.AppUser;
+import com.emsi.hospital.model.Refrigerator;
 import com.emsi.hospital.repository.AppUserRepository;
+import com.emsi.hospital.repository.RefrigeratorRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CONFLICT;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 @Service
 public class AuthService {
 
     private final AppUserRepository userRepository;
+    private final RefrigeratorRepository refrigeratorRepository;
 
-    public AuthService(AppUserRepository userRepository) {
+    public AuthService(AppUserRepository userRepository, RefrigeratorRepository refrigeratorRepository) {
         this.userRepository = userRepository;
+        this.refrigeratorRepository = refrigeratorRepository;
     }
 
     public LoginResponse login(LoginRequest request) {
@@ -51,6 +57,17 @@ public class AuthService {
         user.setPassword(request.password());
         user.setName(request.name());
         user.setRole(request.role());
+        if (request.assignedFridgeIds() != null && !request.assignedFridgeIds().isEmpty()) {
+            user.setAssignedFridges(new ArrayList<>(refrigeratorRepository.findByDeviceIdIn(request.assignedFridgeIds())));
+        }
+        return toResponse(userRepository.save(user));
+    }
+
+    public UserResponse updateAssignedFridges(Long userId, List<String> fridgeIds) {
+        AppUser user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Utilisateur introuvable"));
+        List<Refrigerator> fridges = fridgeIds == null ? List.of() : refrigeratorRepository.findByDeviceIdIn(fridgeIds);
+        user.setAssignedFridges(new ArrayList<>(fridges));
         return toResponse(userRepository.save(user));
     }
 
@@ -62,11 +79,15 @@ public class AuthService {
     }
 
     private UserResponse toResponse(AppUser user) {
+        List<String> fridgeIds = user.getAssignedFridges().stream()
+                .map(Refrigerator::getDeviceId)
+                .toList();
         return new UserResponse(
                 String.valueOf(user.getId()),
                 user.getEmail(),
                 user.getName(),
-                user.getRole()
+                user.getRole(),
+                fridgeIds
         );
     }
 }
